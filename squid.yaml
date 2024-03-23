@@ -1,7 +1,7 @@
 manifestVersion: subsquid.io/v0.1
 name: squid-postgraphile-example
 version: 1
-description: 'The very first evm squid from manifest  '
+description: 'A squid that uses PostGraphile to serve its GraphQL API'
 build: 
 deploy:
   addons:
@@ -15,4 +15,4 @@ deploy:
   api:
     cmd:
       - sqd
-      - serve:prod
+      - api:prod
