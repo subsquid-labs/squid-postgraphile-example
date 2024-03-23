@@ -8,7 +8,7 @@ Dependencies: Node.js v16 or newer, Git, Docker.
 
 ## PostGraphile configuration
 
-The only major difference between a squid API and any other PostGraphile API is the `_squidStatus` query. Here it is implemented via `ProcessorStatusPlugin`. See [`src/api.ts`](src/api.ts) for details.
+The only major difference between a squid PostGraphile API and any other PostGraphile API is the `_squidStatus` query. Here it is implemented via `ProcessorStatusPlugin`. See [`src/api.ts`](src/api.ts) for details.
 
 ## Startup
 
