@@ -64,6 +64,9 @@ app.use(
         ProcessorStatusPlugin,
       ],
       externalUrlBase: process.env.BASE_PATH,
+      graphileBuildOptions: {
+        stateSchemas: ['evm']
+      }
     },
   ),
 );
