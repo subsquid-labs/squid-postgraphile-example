@@ -1,25 +1,24 @@
-import {Entity as Entity_, Column as Column_, PrimaryColumn as PrimaryColumn_, Index as Index_} from "typeorm"
-import * as marshal from "./marshal"
+import {Entity, PrimaryColumn, IntColumn, StringColumn, BigIntColumn, Index} from "@subsquid/typeorm-store"
 
-@Entity_()
+@Entity()
 export class Burn {
     constructor(props?: Partial<Burn>) {
         Object.assign(this, props)
     }
 
-    @PrimaryColumn_()
+    @PrimaryColumn()
     id!: string
 
-    @Column_("int4", {nullable: false})
+    @IntColumn({nullable: false})
     block!: number
 
-    @Index_()
-    @Column_("text", {nullable: false})
+    @Index()
+    @StringColumn({nullable: false})
     address!: string
 
-    @Column_("numeric", {transformer: marshal.bigintTransformer, nullable: false})
+    @BigIntColumn({nullable: false})
     value!: bigint
 
-    @Column_("text", {nullable: false})
+    @StringColumn({nullable: false})
     txHash!: string
 }
