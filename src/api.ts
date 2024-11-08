@@ -20,12 +20,12 @@ export const ProcessorStatusPlugin: Plugin = makeExtendSchemaPlugin((build, opti
       }
 
       extend type Query {
-        _squidStatus: [_ProcessorStatus!]!
+        squidStatus: _ProcessorStatus!
       }
     `,
     resolvers: {
       Query: {
-        _squidStatus: async (parentObject, args, context, info) => {
+        squidStatus: async (parentObject, args, context, info) => {
           const pgClient: pg.Client = context.pgClient;
 
           const { rows } = await pgClient.query(
@@ -39,6 +39,11 @@ export const ProcessorStatusPlugin: Plugin = makeExtendSchemaPlugin((build, opti
       },
     },
   };
+});
+
+app.get('/graphql', (req, res, next) => {
+  const graphiqlPath: string = process.env.BASE_PATH == null ? '/graphiql' : process.env.BASE_PATH + '/api/graphiql'
+  res.send(`<div>Welcome to the GraphQL API of SQD&#39;s <a href=https://github.com/subsquid-labs/squid-postgraphile-example>Postgraphile example squid</a>!</div><div><a href=${graphiqlPath}>The GraphiQL playground is here.</a></div>`)
 });
 
 app.use(
