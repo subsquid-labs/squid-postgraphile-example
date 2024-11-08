@@ -56,6 +56,7 @@ app.use(
       enhanceGraphiql: true,
       dynamicJson: true,
       disableDefaultMutations: true,
+      disableQueryLog: true, // set to false to see the processed queries
       skipPlugins: [NodePlugin],
       appendPlugins: [
         AggregatesPluggin,
@@ -63,7 +64,7 @@ app.use(
         SimplifyInflectorPlugin,
         ProcessorStatusPlugin,
       ],
-      externalUrlBase: process.env.BASE_PATH,
+      externalGraphqlRoute: process.env.BASE_PATH == null ? undefined : process.env.BASE_PATH + '/api/graphql',
       graphileBuildOptions: {
         stateSchemas: ['evm']
       }
