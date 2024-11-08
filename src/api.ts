@@ -72,5 +72,5 @@ app.use(
 );
 
 app.listen(process.env.GRAPHQL_SERVER_PORT, () => {
-  console.log(`Squid API listening on port ${process.env.GQL_PORT}`);
+  console.log(`Squid API listening on port ${process.env.GRAPHQL_SERVER_PORT}`);
 });
