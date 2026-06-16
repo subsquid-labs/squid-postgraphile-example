@@ -2,7 +2,7 @@
 
 # Minimal EVM squid that uses PostGraphile
 
-This [squid](https://docs.subsquid.io/sdk/overview/) indexer presents its data using [PostGraphile](https://www.graphile.org/postgraphile/) instead of the [GraphQL server](https://docs.subsquid.io/sdk/resources/graphql-server/) from [Squid SDK](https://docs.subsquid.io/sdk/). It gets the raw data from [Subsquid Network](https://docs.subsquid.io/subsquid-network).
+This [squid](https://docs.sqd.dev/en/sdk) indexer presents its data using [PostGraphile](https://www.graphile.org/postgraphile/) instead of the [GraphQL server](https://docs.sqd.dev/en/sdk) from [Squid SDK](https://docs.sqd.dev/en/sdk). It gets the raw data from [Subsquid Network](https://docs.sqd.dev/en/sdk).
 
 Dependencies: Node.js v16 or newer, Git, Docker.
 
